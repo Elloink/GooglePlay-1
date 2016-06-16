@@ -20,6 +20,8 @@ public class GameFragment extends BaseFragment {
         // 返回成功的视图
         TextView tv = new TextView(UIUtils.getContext());
         tv.setText(this.getClass().getSimpleName());
+        tv.setTextColor(0xff000000);
+
         return tv;
     }
 
@@ -31,6 +33,6 @@ public class GameFragment extends BaseFragment {
         LoadingPager.LoadedResult[] arr = {LoadingPager.LoadedResult.ERROR, LoadingPager.LoadedResult.EMPTY, LoadingPager.LoadedResult.SUCCESS};
         Random random = new Random();
         int index = random.nextInt(arr.length);// 0 1 2
-        return arr[index];
+        return arr[2];
     }
 }

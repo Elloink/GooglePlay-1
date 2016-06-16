@@ -19,6 +19,7 @@ public class HomeFragment extends BaseFragment {
         // 返回成功的视图
         TextView tv = new TextView(UIUtils.getContext());
         tv.setText(this.getClass().getSimpleName());
+        tv.setTextColor(0xff000000);
         return tv;
     }
 
@@ -26,7 +27,7 @@ public class HomeFragment extends BaseFragment {
     public LoadingPager.LoadedResult initData() {
         //加载数据(已经定义在子线程中)
         SystemClock.sleep(2000);
-        //随机返回散户总状态中的一个
+        //随机返回总状态中的一个
         LoadingPager.LoadedResult[] arr = {LoadingPager.LoadedResult.ERROR, LoadingPager.LoadedResult.EMPTY, LoadingPager.LoadedResult.SUCCESS};
         Random random = new Random();
         int index = random.nextInt(arr.length);// 0 1 2

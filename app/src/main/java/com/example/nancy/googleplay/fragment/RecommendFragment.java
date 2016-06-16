@@ -19,6 +19,7 @@ public class RecommendFragment extends BaseFragment {
         // 返回成功的视图
         TextView tv = new TextView(UIUtils.getContext());
         tv.setText(this.getClass().getSimpleName());
+        tv.setTextColor(0xff000000);
         return tv;
     }
 

@@ -66,7 +66,9 @@ public abstract class LoadingPager extends FrameLayout {
 
         //3.空页面
         mEmptyView = View.inflate(UIUtils.getContext(), R.layout.pager_empty, null);
-        this.addView(mEmptyView);
+//        this.addView(mEmptyView);
+
+        refreshUI();//可以先隐藏掉这三个叠加的页面
 
     }
 

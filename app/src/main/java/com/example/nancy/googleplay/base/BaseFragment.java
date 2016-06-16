@@ -23,6 +23,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        LogUtils.sf("mloadingPager：" + mLoadingPager);
         if (mLoadingPager == null) {
             //第一次执行
             mLoadingPager = new LoadingPager(UIUtils.getContext()) {
@@ -37,9 +38,9 @@ public abstract class BaseFragment extends Fragment {
                 }
             };
         } else {
-            //不是第一次执行
-            ((ViewGroup) mLoadingPager.getParent()).removeView(mLoadingPager);
-            LogUtils.sf(mLoadingPager.getParent().getClass().getSimpleName());
+//            //不是第一次执行
+//            ((ViewGroup) mLoadingPager.getParent()).removeView(mLoadingPager);
+//            LogUtils.sf(mLoadingPager.getParent().getClass().getSimpleName());
         }
         return mLoadingPager;
     }
