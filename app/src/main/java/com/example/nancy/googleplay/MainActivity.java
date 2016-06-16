@@ -8,8 +8,29 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
+        initView();
+        initActionBar();
+        initData();
+        initEvent();
+
+
+    }
+
+    private void initData() {
+
+    }
+
+    private void initEvent() {
+
+    }
+
+    private void initActionBar() {
+
+    }
+
+    private void initView() {
+        setContentView(R.layout.activity_main);
 
 
     }
