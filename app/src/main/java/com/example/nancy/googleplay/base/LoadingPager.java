@@ -5,12 +5,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.nancy.googleplay.R;
+import com.example.nancy.googleplay.util.LogUtils;
 import com.example.nancy.googleplay.util.UIUtils;
 
 /**
  * Created by Nancy on 2016/6/15.
  */
-public class LoadingPager extends FrameLayout {
+public abstract class LoadingPager extends FrameLayout {
 
     public static final int STATE_NONE = -1;            // 默认情况
     public static final int STATE_LOADING = 0;            // 正在请求网络
@@ -38,6 +39,7 @@ public class LoadingPager extends FrameLayout {
     private View mLoadingView;
     private View mErrorView;
     private View mEmptyView;
+    private View mSuccessView;
 
     public LoadingPager(Context context) {
         super(context);
@@ -82,11 +84,89 @@ public class LoadingPager extends FrameLayout {
      * @des 触发加载数据
      * @call 暴露给外界调用, 其实就是外界  触发加载数据
      */
-    private void loadData() {
+    public void loadData() {
 
         //如果加载成功，或者正在加载中，就不需要再加载了
-        if(mCurState !=STATE_SUCCESS && mCurState!=STATE_LOADING){
+        if (mCurState != STATE_SUCCESS && mCurState != STATE_LOADING) {
+            LogUtils.sf("开始加载数据");
+            //保证每次执行的时候一定是加载中视图，而不是上次的mCurState
+            mCurState = STATE_LOADING;
+            refreshUI();
 
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    //2.异步加载数据
+                    LoadedResult tempState = initData();
+                    //3.处理加载结果
+                    mCurState = tempState.getState();//将枚举值转换成int
+
+                    UIUtils.postTaskSafely(new Runnable() {
+                        @Override
+                        public void run() {
+                            //刷新ui
+                            refreshUI();
+                        }
+                    });
+                }
+            }).start();
+
+        }
+
+    }
+
+    /**
+     * @des 根据当前状态显示不同的view
+     * @call 1. LoadingPager初始化的时候
+     * @call 2.    显示正在加载数据
+     * @call 3. 正在加载数据执行完成的时候
+     */
+    private void refreshUI() {
+        //控制loading视图显示隐藏
+        mLoadingView.setVisibility(mCurState == STATE_LOADING || mCurState == STATE_NONE ? VISIBLE : GONE);
+        //控制emptyView视图的显示和隐藏
+        mEmptyView.setVisibility(mCurState == STATE_EMPTY ? VISIBLE : GONE);
+        //控制error视图的显示隐藏
+        mErrorView.setVisibility(mCurState == STATE_ERROR ? VISIBLE : GONE);
+
+        if (mSuccessView == null && mCurState == STATE_SUCCESS) {
+            //创建成功视图
+            mSuccessView = initSuccessView();
+            this.addView(mSuccessView);
+        }
+
+        if (mSuccessView != null) {
+            //控制success视图的显示和隐藏
+            mSuccessView.setVisibility(mCurState == STATE_SUCCESS ? VISIBLE : GONE);
+        }
+
+    }
+
+    /**
+     * @des 返回成功视图
+     * @call 正在加载数据完成之后, 并且数据加载成功, 我们必须告知具体的成功视图
+     */
+    public abstract View initSuccessView();
+
+    /**
+     * @des 正在加载数据, 必须实现, 但是不知道具体实现, 定义成为抽象方法, 让子类具体实现
+     * @call loadData()方法被调用的时候
+     */
+    public abstract LoadedResult initData();
+
+    /**
+     * 枚举型可以保证不会返回期望值之外的值
+     */
+    public enum LoadedResult {
+        SUCCESS(STATE_SUCCESS), ERROR(STATE_ERROR), EMPTY(STATE_EMPTY);
+        int state;
+
+        public int getState() {
+            return state;
+        }
+
+        private LoadedResult(int state) {
+            this.state = state;
         }
 
     }
