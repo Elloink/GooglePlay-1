@@ -1,4 +1,4 @@
-package com.example.nancy.googleplay;
+package com.example.nancy.googleplay.activity;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
 import com.astuetz.PagerSlidingTabStripExtends;
+import com.example.nancy.googleplay.R;
 import com.example.nancy.googleplay.base.BaseFragment;
 import com.example.nancy.googleplay.factory.FragmentFactory;
 import com.example.nancy.googleplay.util.LogUtils;
