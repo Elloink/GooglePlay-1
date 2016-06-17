@@ -23,7 +23,7 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        LogUtils.sf("mloadingPager：" + mLoadingPager);
+        LogUtils.sf("onCreateView：" + this.getClass().getSimpleName());
         if (mLoadingPager == null) {
             //第一次执行
             mLoadingPager = new LoadingPager(UIUtils.getContext()) {
@@ -37,13 +37,16 @@ public abstract class BaseFragment extends Fragment {
                     return BaseFragment.this.initData();
                 }
             };
-        } else {
+        }
+//        } else { todo 不能加else的内容，要不然会空指针。原因不详
+////            LogUtils.sf("mloadingPager：" + mLoadingPager.getParent());
+////            LogUtils.sf(mLoadingPager.getParent().getClass().getSimpleName());
 //            //不是第一次执行
 //            ((ViewGroup) mLoadingPager.getParent()).removeView(mLoadingPager);
-//            LogUtils.sf(mLoadingPager.getParent().getClass().getSimpleName());
-        }
+//        }
         return mLoadingPager;
     }
+
 
     public abstract View initSuccessView();
 

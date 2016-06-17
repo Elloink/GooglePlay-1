@@ -11,14 +11,7 @@
                     "endOffset": 109
                 },
                 "from": {
-                    "file": "I:\\AndroidStudioProjects\\GooglePlay\\PagerSlidingTabStripLib\\res\\values\\colors.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 57,
-                        "endColumn": 58,
-                        "endOffset": 111
-                    }
+                    "file": "I:\\AndroidStudioProjects\\GooglePlay\\PagerSlidingTabStripLib\\res\\values\\colors.xml"
                 }
             }
         ]

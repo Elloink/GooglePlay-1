@@ -8,7 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 
-import com.astuetz.PagerSlidingTabStrip;
+import com.astuetz.PagerSlidingTabStripExtends;
 import com.example.nancy.googleplay.base.BaseFragment;
 import com.example.nancy.googleplay.factory.FragmentFactory;
 import com.example.nancy.googleplay.util.LogUtils;
@@ -16,7 +16,7 @@ import com.example.nancy.googleplay.util.UIUtils;
 
 public class MainActivity extends AppCompatActivity {
 
-    private PagerSlidingTabStrip mTabs;
+    private PagerSlidingTabStripExtends mTabs;
     private ViewPager mViewPager;
     private String[] mMainTitles;
 
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
+                //todo 之所以放在这里是希望在选中的时候在加载数据（因为默认情况下ViewPager有预加载功能，如果在Fragment中写的话会直接加载数据，浪费用户流量）
                 //完成触发加载
                 BaseFragment fragment = FragmentFactory.getFragment(position);
                 if (fragment != null) {
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         setContentView(R.layout.activity_main);
 
-        mTabs = (PagerSlidingTabStrip) findViewById(R.id.psts_main_tags);
+        mTabs = (PagerSlidingTabStripExtends) findViewById(R.id.psts_main_tags);
         mViewPager = (ViewPager) findViewById(R.id.vp_main_content);
 
     }

@@ -57,6 +57,25 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int pstsScrollOffset=0x7f010007;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int pstsSelectedTabTextColor=0x7f01000e;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int pstsSelectedTabTextSize=0x7f01000d;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -79,6 +98,25 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static int pstsTabPaddingLeftRight=0x7f010006;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int pstsTabTextColor=0x7f01000c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static int pstsTabTextSize=0x7f01000b;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -125,9 +163,13 @@ containing a value of this type.
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsIndicatorColor com.astuetz.pagerslidingtabstrip:pstsIndicatorColor}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsIndicatorHeight com.astuetz.pagerslidingtabstrip:pstsIndicatorHeight}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsScrollOffset com.astuetz.pagerslidingtabstrip:pstsScrollOffset}</code></td><td></td></tr>
+           <tr><td><code>{@link #PagerSlidingTabStrip_pstsSelectedTabTextColor com.astuetz.pagerslidingtabstrip:pstsSelectedTabTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PagerSlidingTabStrip_pstsSelectedTabTextSize com.astuetz.pagerslidingtabstrip:pstsSelectedTabTextSize}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsShouldExpand com.astuetz.pagerslidingtabstrip:pstsShouldExpand}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsTabBackground com.astuetz.pagerslidingtabstrip:pstsTabBackground}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsTabPaddingLeftRight com.astuetz.pagerslidingtabstrip:pstsTabPaddingLeftRight}</code></td><td></td></tr>
+           <tr><td><code>{@link #PagerSlidingTabStrip_pstsTabTextColor com.astuetz.pagerslidingtabstrip:pstsTabTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #PagerSlidingTabStrip_pstsTabTextSize com.astuetz.pagerslidingtabstrip:pstsTabTextSize}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsTextAllCaps com.astuetz.pagerslidingtabstrip:pstsTextAllCaps}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsUnderlineColor com.astuetz.pagerslidingtabstrip:pstsUnderlineColor}</code></td><td></td></tr>
            <tr><td><code>{@link #PagerSlidingTabStrip_pstsUnderlineHeight com.astuetz.pagerslidingtabstrip:pstsUnderlineHeight}</code></td><td></td></tr>
@@ -137,9 +179,13 @@ containing a value of this type.
            @see #PagerSlidingTabStrip_pstsIndicatorColor
            @see #PagerSlidingTabStrip_pstsIndicatorHeight
            @see #PagerSlidingTabStrip_pstsScrollOffset
+           @see #PagerSlidingTabStrip_pstsSelectedTabTextColor
+           @see #PagerSlidingTabStrip_pstsSelectedTabTextSize
            @see #PagerSlidingTabStrip_pstsShouldExpand
            @see #PagerSlidingTabStrip_pstsTabBackground
            @see #PagerSlidingTabStrip_pstsTabPaddingLeftRight
+           @see #PagerSlidingTabStrip_pstsTabTextColor
+           @see #PagerSlidingTabStrip_pstsTabTextSize
            @see #PagerSlidingTabStrip_pstsTextAllCaps
            @see #PagerSlidingTabStrip_pstsUnderlineColor
            @see #PagerSlidingTabStrip_pstsUnderlineHeight
@@ -147,7 +193,8 @@ containing a value of this type.
         public static final int[] PagerSlidingTabStrip = {
             0x7f010000, 0x7f010001, 0x7f010002, 0x7f010003,
             0x7f010004, 0x7f010005, 0x7f010006, 0x7f010007,
-            0x7f010008, 0x7f010009, 0x7f01000a
+            0x7f010008, 0x7f010009, 0x7f01000a, 0x7f01000b,
+            0x7f01000c, 0x7f01000d, 0x7f01000e
         };
         /**
           <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsDividerColor}
@@ -228,6 +275,37 @@ containing a value of this type.
         */
         public static int PagerSlidingTabStrip_pstsScrollOffset = 7;
         /**
+          <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsSelectedTabTextColor}
+          attribute's value can be found in the {@link #PagerSlidingTabStrip} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.astuetz.pagerslidingtabstrip:pstsSelectedTabTextColor
+        */
+        public static int PagerSlidingTabStrip_pstsSelectedTabTextColor = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsSelectedTabTextSize}
+          attribute's value can be found in the {@link #PagerSlidingTabStrip} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.astuetz.pagerslidingtabstrip:pstsSelectedTabTextSize
+        */
+        public static int PagerSlidingTabStrip_pstsSelectedTabTextSize = 13;
+        /**
           <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsShouldExpand}
           attribute's value can be found in the {@link #PagerSlidingTabStrip} array.
 
@@ -267,6 +345,37 @@ containing a value of this type.
           @attr name com.astuetz.pagerslidingtabstrip:pstsTabPaddingLeftRight
         */
         public static int PagerSlidingTabStrip_pstsTabPaddingLeftRight = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsTabTextColor}
+          attribute's value can be found in the {@link #PagerSlidingTabStrip} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.astuetz.pagerslidingtabstrip:pstsTabTextColor
+        */
+        public static int PagerSlidingTabStrip_pstsTabTextColor = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsTabTextSize}
+          attribute's value can be found in the {@link #PagerSlidingTabStrip} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.astuetz.pagerslidingtabstrip:pstsTabTextSize
+        */
+        public static int PagerSlidingTabStrip_pstsTabTextSize = 11;
         /**
           <p>This symbol is the offset where the {@link com.astuetz.pagerslidingtabstrip.R.attr#pstsTextAllCaps}
           attribute's value can be found in the {@link #PagerSlidingTabStrip} array.
